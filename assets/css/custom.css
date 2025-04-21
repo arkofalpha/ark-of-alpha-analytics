@@ -577,61 +577,84 @@
     display: block;
     color: var(--primary-color);
     font-size: 28px;
-    line-height: 0;
-    padding: 10px;
     cursor: pointer;
+    line-height: 0;
+    transition: 0.3s;
+    position: relative;
     z-index: 9999;
-    margin-right: 10px;
+    padding: 10px;
     border: none;
     background: transparent;
   }
 
   .navmenu {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    max-width: 300px;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 80px 20px 0;
-    transition: 0.3s;
-    z-index: 9997;
+    top: 60px;
+    left: auto;
+    right: 10px;
+    width: max-content;
+    min-width: 200px;
+    max-width: 80%;
+    bottom: auto;
+    z-index: 9998;
     overflow-y: auto;
+    background: white;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    list-style: none;
     padding: 0;
     margin: 0;
-    list-style: none;
+    display: flex;
+    flex-direction: column;
   }
 
-  .navmenu a {
-    color: var(--primary-color);
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 0;
-    display: block;
+  .navmenu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
   }
 
   .navmenu.mobile-nav-active {
-    right: 0;
+    visibility: visible;
+    opacity: 1;
+    max-height: calc(100vh - 70px);
   }
 
-  .header .branding {
-    padding: 10px 0;
+  .navmenu.mobile-nav-active li {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .header .logo img {
-    max-height: 40px;
+  .navmenu li:nth-child(1) { transition-delay: 0.1s; }
+  .navmenu li:nth-child(2) { transition-delay: 0.2s; }
+  .navmenu li:nth-child(3) { transition-delay: 0.3s; }
+  .navmenu li:nth-child(4) { transition-delay: 0.4s; }
+  .navmenu li:nth-child(5) { transition-delay: 0.5s; }
+  .navmenu li:nth-child(6) { transition-delay: 0.6s; }
+
+  .navmenu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    white-space: nowrap;
   }
 
-  .header .sitename {
-    font-size: 20px;
+  .navmenu a:hover,
+  .navmenu .active {
+    background: rgba(25, 119, 204, 0.1);
+  }
+
+  .header .container {
+    position: relative;
   }
 }
 

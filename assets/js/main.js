@@ -13,41 +13,44 @@
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    const selectHeader = document.querySelector('.header');
+    if (!selectHeader) {
+      return;
+    }
+
+    window.scrollY > 100 ? selectHeader.classList.add('scrolled') : selectHeader.classList.remove('scrolled');
   }
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
   /**
-   * Mobile nav toggle
+   * Mobile Navigation
    */
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-  const navMenu = document.querySelector('.navmenu');
-  const body = document.querySelector('body');
-
-  function mobileNavToogle() {
-    navMenu.classList.toggle('mobile-nav-active');
-    mobileNavToggle.classList.toggle('bi-x');
-    mobileNavToggle.classList.toggle('bi-list');
-    body.classList.toggle('mobile-nav-open');
-  }
+  const navmenu = document.querySelector('.navmenu');
 
   if (mobileNavToggle) {
-    mobileNavToggle.addEventListener('click', mobileNavToogle);
+    mobileNavToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.classList.toggle('bi-x');
+      this.classList.toggle('bi-list');
+      navmenu.classList.toggle('mobile-nav-active');
+      document.body.classList.toggle('mobile-nav-open');
+    });
   }
 
   /**
    * Close mobile nav when clicking outside
    */
   document.addEventListener('click', (e) => {
-    if (navMenu?.classList.contains('mobile-nav-active') && 
+    if (navmenu?.classList.contains('mobile-nav-active') && 
         !e.target.closest('.navmenu') && 
         !e.target.closest('.mobile-nav-toggle')) {
-      mobileNavToogle();
+      navmenu.classList.remove('mobile-nav-active');
+      mobileNavToggle.classList.add('bi-list');
+      mobileNavToggle.classList.remove('bi-x');
+      document.body.classList.remove('mobile-nav-open');
     }
   });
 
@@ -55,9 +58,26 @@
    * Close mobile nav on escape key press
    */
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu?.classList.contains('mobile-nav-active')) {
-      mobileNavToogle();
+    if (e.key === 'Escape' && navmenu?.classList.contains('mobile-nav-active')) {
+      navmenu.classList.remove('mobile-nav-active');
+      mobileNavToggle.classList.add('bi-list');
+      mobileNavToggle.classList.remove('bi-x');
+      document.body.classList.remove('mobile-nav-open');
     }
+  });
+
+  /**
+   * Close menu on navigation item click
+   */
+  document.querySelectorAll('.navmenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navmenu?.classList.contains('mobile-nav-active')) {
+        navmenu.classList.remove('mobile-nav-active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+        document.body.classList.remove('mobile-nav-open');
+      }
+    });
   });
 
   /**
@@ -67,8 +87,11 @@
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       
-      if (navMenu?.classList.contains('mobile-nav-active')) {
-        mobileNavToogle();
+      if (navmenu?.classList.contains('mobile-nav-active')) {
+        navmenu.classList.remove('mobile-nav-active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+        document.body.classList.remove('mobile-nav-open');
       }
 
       const target = document.querySelector(this.getAttribute('href'));
@@ -91,7 +114,10 @@
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+        navmenu.classList.remove('mobile-nav-active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+        document.body.classList.remove('mobile-nav-open');
       }
     });
 
