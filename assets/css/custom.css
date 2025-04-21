@@ -294,6 +294,10 @@
     margin-bottom: 15px;
     display: inline-block;
   }
+
+  .footer {
+    background: #4da6ff !important;
+  }
 }
 
 @media (max-width: 576px) {
