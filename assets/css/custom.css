@@ -493,102 +493,31 @@
   margin-bottom: 8px;
 }
 
-/* Service Item Icon */
-.service-item .icon {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: float 3s ease-in-out infinite;
-  transition: all 0.3s ease;
+/* Service Item Image */
+.service-item .service-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
 }
 
-.service-item .icon i {
-  font-size: 32px;
-  color: var(--primary-color);
-  transition: all 0.3s ease;
+.service-item .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
 }
 
-/* Enhanced Service Item Icon */
+.service-item:hover .service-image img {
+    transform: scale(1.05);
+}
+
+/* Remove the old icon styles */
 .service-item .service-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.service-item .service-icon i {
-  font-size: 36px;
-  color: #ffffff;
-  transition: all 0.4s ease;
-  z-index: 1;
-}
-
-.service-item .service-icon::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: var(--primary-gradient);
-  opacity: 0.8;
-  transition: all 0.4s ease;
-}
-
-.service-item .service-icon::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background: var(--primary-gradient);
-  opacity: 0.3;
-  z-index: -1;
-  transition: all 0.4s ease;
-}
-
-/* Service Item Hover Effects */
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.4);
-  background: #006666;
-}
-
-.service-item:hover .icon {
-  background: var(--primary-color);
-}
-
-.service-item:hover .icon i {
-  color: #ffffff;
-}
-
-.service-item:hover .service-icon {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-item:hover .service-icon::after {
-  transform: scale(1.2);
-  opacity: 0;
-}
-
-.service-item:hover .service-icon i {
-  transform: scale(1.1);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    display: none;
 }
 
 /* About Section Text Styling */
