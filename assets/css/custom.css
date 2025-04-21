@@ -4,6 +4,10 @@
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.18);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --h1-font-size: clamp(1.75rem, 4vw, 2.5rem);
+  --h2-font-size: clamp(1.5rem, 3vw, 2rem);
+  --h3-font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  --body-font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 /* Hero CTA Buttons */
@@ -567,6 +571,75 @@
   box-shadow: 0 2px 20px rgba(31, 38, 135, 0.1);
 }
 
+/* Mobile Navigation */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    display: block;
+    color: var(--primary-color);
+    font-size: 28px;
+    line-height: 0;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999;
+    margin-right: 10px;
+    border: none;
+    background: transparent;
+  }
+
+  .navmenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 0;
+    transition: 0.3s;
+    z-index: 9997;
+    overflow-y: auto;
+  }
+
+  .navmenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navmenu a {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .navmenu.mobile-nav-active {
+    right: 0;
+  }
+
+  .header .branding {
+    padding: 10px 0;
+  }
+
+  .header .logo img {
+    max-height: 40px;
+  }
+
+  .header .sitename {
+    font-size: 20px;
+  }
+}
+
+/* Position the toggle button properly */
+.header .container {
+  position: relative;
+}
+
 /* General Elements */
 .section-title h2::after {
   background: var(--primary-gradient);
@@ -625,6 +698,23 @@
 }
 
 @media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .section-title p {
+    font-size: 14px;
+  }
+
   /* Hero Section */
   .hero::before {
     content: '';
@@ -831,6 +921,21 @@
 }
 
 @media (max-width: 576px) {
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   /* Testimonials */
   .testimonials .info h3 {
     font-size: 28px;
@@ -895,4 +1000,46 @@
   .resource-card {
     min-height: 300px;
   }
+}
+
+/* Responsive Base Layout */
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 1rem);
+  padding-left: var(--bs-gutter-x, 1rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+/* Responsive Typography */
+h1 { font-size: var(--h1-font-size); }
+h2 { font-size: var(--h2-font-size); }
+h3 { font-size: var(--h3-font-size); }
+p, li, a { font-size: var(--body-font-size); }
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Fluid Spacing */
+.section > .container {
+  max-width: min(100% - 2rem, 1320px);
+  margin-inline: auto;
+}
+
+/* Box Sizing Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

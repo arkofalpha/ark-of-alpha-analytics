@@ -25,14 +25,65 @@
   /**
    * Mobile nav toggle
    */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('.navmenu');
+  const body = document.querySelector('body');
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    navMenu.classList.toggle('mobile-nav-active');
+    mobileNavToggle.classList.toggle('bi-x');
+    mobileNavToggle.classList.toggle('bi-list');
+    body.classList.toggle('mobile-nav-open');
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', mobileNavToogle);
+  }
+
+  /**
+   * Close mobile nav when clicking outside
+   */
+  document.addEventListener('click', (e) => {
+    if (navMenu?.classList.contains('mobile-nav-active') && 
+        !e.target.closest('.navmenu') && 
+        !e.target.closest('.mobile-nav-toggle')) {
+      mobileNavToogle();
+    }
+  });
+
+  /**
+   * Close mobile nav on escape key press
+   */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu?.classList.contains('mobile-nav-active')) {
+      mobileNavToogle();
+    }
+  });
+
+  /**
+   * Smooth scroll to sections and close mobile nav
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      if (navMenu?.classList.contains('mobile-nav-active')) {
+        mobileNavToogle();
+      }
+
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 
   /**
    * Hide mobile nav on same-page/hash links
