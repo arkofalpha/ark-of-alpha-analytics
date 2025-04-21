@@ -633,8 +633,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #00c853 0%, #1de9b6 100%);
-    opacity: 0.9;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    opacity: 1;
     z-index: 2;
   }
 
@@ -643,7 +643,7 @@
     z-index: 3;
     font-size: 32px;
     text-align: center;
-    color: #0080ff !important; /* Force blue color on mobile */
+    color: #ffffff !important;
   }
 
   .hero .welcome p {
@@ -651,7 +651,7 @@
     z-index: 3;
     font-size: 18px;
     text-align: center;
-    color: #0080ff !important; /* Force blue color on mobile */
+    color: #ffffff !important;
   }
 
   .hero .content {
