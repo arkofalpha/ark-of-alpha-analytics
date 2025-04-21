@@ -1725,3 +1725,98 @@ section,
 # Starter Section Section
 --------------------------------------------------------------*/
 /* Removed empty ruleset */
+
+/*--------------------------------------------------------------
+# Enhanced Mobile Responsiveness
+--------------------------------------------------------------*/
+@media (max-width: 991px) {
+  .section-title {
+    padding-bottom: 40px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero .content {
+    margin-top: 30px;
+  }
+
+  .hero .content .icon-box {
+    padding: 30px 20px;
+  }
+
+  /* About Section */
+  .about .content ul li {
+    margin-top: 20px;
+  }
+
+  .about .content ul i {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .header .branding {
+    min-height: 50px;
+  }
+
+  .header .logo h1 {
+    font-size: 24px;
+  }
+
+  /* Stats Section */
+  .stats .stats-item {
+    padding: 20px 15px;
+  }
+
+  .stats .stats-item span {
+    font-size: 28px;
+  }
+
+  /* Footer */
+  .footer .footer-top {
+    padding-top: 30px;
+  }
+
+  .footer .footer-about .logo span {
+    font-size: 22px;
+  }
+
+  .footer .social-links a {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  section,
+  .section {
+    padding: 40px 0;
+  }
+
+  /* Header */
+  .header .logo img {
+    max-height: 30px;
+  }
+
+  /* Stats Section */
+  .stats i {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer .footer-links,
+  .footer .footer-contact {
+    margin-bottom: 20px;
+  }
+}

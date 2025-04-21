@@ -578,3 +578,148 @@
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero .welcome h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .hero .welcome p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-get-started,
+  .btn-learn-more {
+    width: 100%;
+    text-align: center;
+    max-width: 280px;
+  }
+
+  /* Services Section */
+  .service-item {
+    min-height: auto;
+    padding: 25px 15px;
+  }
+
+  .service-item .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-item .service-icon i {
+    font-size: 24px;
+  }
+
+  .service-item h3 {
+    font-size: 20px;
+  }
+
+  /* Resources Section */
+  .resource-card {
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  .resource-card .icon {
+    font-size: 32px;
+  }
+
+  .resource-card h4 {
+    font-size: 20px;
+  }
+
+  /* Contact Section */
+  .contact-card {
+    margin-bottom: 20px;
+  }
+
+  .social-links.professional {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-links.professional a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .qr-code img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Testimonials */
+  .testimonials .info h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .testimonial-item {
+    padding: 20px;
+  }
+
+  /* Info Items */
+  .info-item {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .info-item i {
+    margin-bottom: 10px;
+  }
+
+  /* Section Titles */
+  .section-title h2 {
+    font-size: 26px;
+  }
+
+  .section-title p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero Section */
+  .hero .welcome h2 {
+    font-size: 26px;
+  }
+
+  .hero .content .why-box h3 {
+    font-size: 24px;
+  }
+
+  /* Services */
+  .service-item {
+    margin: 0 10px;
+  }
+
+  .service-item h3 {
+    font-size: 18px;
+  }
+
+  /* Resources */
+  .resource-card h4 {
+    font-size: 18px;
+  }
+}
+
+/* Tablet Specific Adjustments */
+@media (min-width: 769px) and (max-width: 991px) {
+  .service-item {
+    min-height: 320px;
+  }
+
+  .resource-card {
+    min-height: 300px;
+  }
+}
