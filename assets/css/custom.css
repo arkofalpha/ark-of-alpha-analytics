@@ -572,6 +572,64 @@
   background: var(--primary-gradient);
 }
 
+/* Background Image Handling */
+.section[style*="background"] {
+  position: relative;
+  z-index: 1;
+}
+
+.section[style*="background"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Lighter overlay for desktop */
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Adjust overlay darkness based on screen size */
+@media (min-width: 992px) {
+  .section[style*="background"]::before {
+    background: rgba(0, 0, 0, 0.2); /* Even lighter for larger screens */
+  }
+  
+  /* Section-specific overlay adjustments */
+  #about.section[style*="background"]::before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+  }
+  
+  #services.section[style*="background"]::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  }
+  
+  #testimonials.section[style*="background"]::before {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+  }
+  
+  #resources.section[style*="background"]::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  }
+  
+  #contact.section[style*="background"]::before {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  }
+}
+
+@media (max-width: 991px) {
+  .section[style*="background"]::before {
+    background: rgba(0, 0, 0, 0.4); /* Slightly darker for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .section[style*="background"]::before {
+    background: rgba(0, 0, 0, 0.7); /* Darkest for mobile */
+  }
+}
+
 /* Animations */
 @keyframes float {
   0% { transform: translateY(0px); }
@@ -654,6 +712,61 @@
 
   .qr-code img {
     max-width: 150px;
+  }
+
+  .section[style*="background"] {
+    background-attachment: scroll !important;
+    position: relative;
+  }
+
+  .section[style*="background"]::before {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  /* Improve text readability on mobile */
+  .section[style*="background"] h2,
+  .section[style*="background"] h3,
+  .section[style*="background"] p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Specific section adjustments */
+  #about.section[style*="background"] {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  #services.section[style*="background"] {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  #testimonials.section[style*="background"] {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  #resources.section[style*="background"] {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  #contact.section[style*="background"] {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  /* Improve card readability on dark backgrounds */
+  .service-item,
+  .resource-card,
+  .testimonial-item,
+  .contact-card,
+  .info-item {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 }
 
