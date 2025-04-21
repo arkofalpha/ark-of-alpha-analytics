@@ -56,7 +56,7 @@
 /* Resources Section */
 .resource-card {
   padding: 35px;
-  background: linear-gradient(145deg, #f8f9ff 0%, #eef4ff 100%);
+  background: #333399 !important;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
@@ -74,15 +74,14 @@
 .resource-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 45px rgba(31, 38, 135, 0.2);
-  background: linear-gradient(145deg, #ffffff 0%, #f5f8ff 100%);
+  background: #2b2b80 !important;
 }
 
 .resource-card .icon {
   font-size: 38px;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: #ffffff;
   margin: 0 auto 25px;
   display: flex;
   justify-content: center;
@@ -92,16 +91,16 @@
 .resource-card h4 {
   font-size: 22px;
   font-weight: 700;
-  color: #2b4c7e;
+  color: #ffffff;
   margin-bottom: 18px;
   letter-spacing: -0.2px;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .resource-card p {
   font-size: 16px;
   line-height: 1.6;
-  color: #4a4a4a;
+  color: #f0f0f0;
   margin-bottom: 20px;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
@@ -165,33 +164,95 @@
   backdrop-filter: blur(15px);
 }
 
-/* Contact Cards */
+/* Contact Cards and Info Items - Base Styles with High Specificity */
+body .contact .contact-card,
+body #contact .contact-card,
+.contact .contact-card,
+#contact .contact-card,
 .contact-card {
-  background: var(--glass-bg);
+  background-color: #00cc66 !important;
+  background: #00cc66 !important;
   backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   border-radius: 8px;
   transition: all 0.3s ease;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
-  color: #2b2b2b;
+  color: #ffffff;
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(31, 38, 135, 0.25);
+body .contact .info-item,
+body #contact .info-item,
+.contact .info-item,
+#contact .info-item,
+.info-item {
+  padding: 25px;
+  background-color: #00cc66 !important;
+  background: #00cc66 !important;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Improve card readability on dark backgrounds - excluding contact cards and info items */
+.service-item:not(.contact-card):not(.info-item),
+.resource-card:not(.contact-card):not(.info-item),
+.testimonial-item:not(.contact-card):not(.info-item) {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Cards and Info Items with maximum specificity */
+.contact-card,
+.info-item,
+#contact .contact-card,
+#contact .info-item,
+body #contact .contact-card,
+body #contact .info-item,
+body .contact .contact-card,
+body .contact .info-item,
+.contact .contact-card,
+.contact .info-item,
+[class*="section"] .contact-card,
+[class*="section"] .info-item {
+  background: #00cc66 !important;
+  background-color: #00cc66 !important;
+  color: #ffffff !important;
+}
+
+/* Override any other background colors in media queries */
+@media (max-width: 768px) {
+  #contact {
+    background: rgba(51, 102, 204, 0.1);
+  }
+
+  body .contact .contact-card,
+  body #contact .contact-card,
+  .contact .contact-card,
+  #contact .contact-card,
+  .contact-card,
+  body .contact .info-item,
+  body #contact .info-item,
+  .contact .info-item,
+  #contact .info-item,
+  .info-item {
+    background-color: #00cc66 !important;
+    background: #00cc66 !important;
+  }
 }
 
 .contact-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .contact-card p {
   font-size: 1rem;
-  color: #4a4a4a;
+  color: #ffffff;
   line-height: 1.5;
 }
 
@@ -204,9 +265,10 @@
 }
 
 /* Enhanced Info Items */
-.info-item {
+.info-item,
+#contact .info-item {
   padding: 25px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
+  background: #00cc66 !important;
   border-radius: 15px;
   margin-bottom: 20px;
   transition: all 0.3s ease;
@@ -230,16 +292,56 @@
   transform: scale(1.1);
 }
 
+.info-item i,
+.info-item h3,
+.info-item p {
+  color: #ffffff;
+}
+
+.contact .info-item,
+.contact-section .info-item,
+#contact .info-item,
+body .contact .info-item,
+body #contact .info-item {
+  padding: 25px;
+  background-color: #00cc66 !important;
+  background: #00cc66 !important;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.contact .contact-card,
+.contact-section .contact-card,
+#contact .contact-card,
+body .contact .contact-card,
+body #contact .contact-card {
+  background-color: #00cc66 !important;
+  background: #00cc66 !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   #contact {
-    background: #3366cc !important;
+    background: rgba(51, 102, 204, 0.1) !important;
   }
 
   #contact .contact-card,
   .contact .contact-card,
   .contact-card,
-  .info-item {
-    background: #6666ff !important;
+  .info-item,
+  body #contact .contact-card,
+  body .contact .contact-card,
+  body #contact .info-item,
+  body .contact .info-item {
+    background: #00cc66 !important;
+    background-color: #00cc66 !important;
     padding: 25px 20px;
   }
 
@@ -297,6 +399,43 @@
 
   .footer {
     background: #4da6ff !important;
+  }
+
+  #resources .resource-card {
+    background: #333399 !important;
+  }
+  
+  #resources .resource-card:hover {
+    background: #2b2b80 !important;
+  }
+  
+  #resources .resource-card .icon {
+    color: #ffffff !important;
+    background: none;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  /* Improve card readability on dark backgrounds */
+  .service-item,
+  .resource-card,
+  .testimonial-item {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Keep the green background for contact cards and info items */
+  .contact-card,
+  .info-item,
+  #contact .contact-card,
+  #contact .info-item,
+  body #contact .contact-card,
+  body #contact .info-item,
+  body .contact .contact-card,
+  body .contact .info-item {
+    background: #00cc66 !important;
+    padding: 25px 20px;
   }
 }
 
@@ -360,62 +499,10 @@
 }
 
 /* Testimonials Section */
-.testimonial-header {
-  padding: 20px;
-  background: rgba(43, 76, 126, 0.15);
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.testimonial-header h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2b4c7e;
-  margin-bottom: 5px;
-}
-
-.testimonial-header h4 {
-  font-size: 14px;
-  color: #6c757d;
-  margin-bottom: 10px;
-}
-
-.testimonial-item {
-  background: rgba(255, 255, 255, 0.97);
-  color: #2b2b2b;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-}
-
-.testimonial-item h3 {
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-.testimonial-item h4 {
-  color: #666666;
-}
-
-.testimonial-item p {
-  font-style: italic;
-}
-
-.testimonial-item .stars i {
-  color: #ffd700;
-}
-
-.testimonial-item .bi-quote {
-  color: var(--primary-color);
-  opacity: 0.3;
-}
-
-/* Testimonials Section with Background */
 .testimonials {
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  background-color: #009900;
 }
 
 .testimonials .section-title h2,
@@ -424,17 +511,33 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.testimonials .swiper {
+  background-color: #b3ffb3;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .testimonials .testimonial-item {
-  background: rgba(255, 255, 255, 0.97);
+  background: #006600;
   backdrop-filter: blur(15px);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonials .testimonial-item h3,
+.testimonials .testimonial-item h4,
+.testimonials .testimonial-item p,
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: #ffffff;
 }
 
 .testimonials .info h3 {
   color: #ffffff;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 /* Service Items - Base Styling */
@@ -445,7 +548,7 @@
   padding: 30px 20px;
   min-height: 340px;
   border-radius: 10px;
-  background-color: #0080ff;
+  background: #006666;
   color: #ffffff;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -453,19 +556,32 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+#services .service-item,
+.services .service-item {
+  background-color: #006666 !important;
+}
+
+#services .service-item:hover,
+.services .service-item:hover {
+  background-color: #006666 !important;
+}
+
 .service-item h3,
 .service-item p,
 .service-item ul li,
-.service-item ul li::marker {
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+.service-item ul li::marker,
+.service-item .text-decoration-none {
+  color: #ffffff !important;
+}
+
+.service-item .text-decoration-none.text-dark {
+  color: #ffffff !important;
 }
 
 .service-item h3 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #ffffff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -473,110 +589,38 @@
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .service-item ul li {
   font-size: 14px;
   margin-bottom: 8px;
-  color: rgba(255, 255, 255, 0.85);
 }
 
-/* Service Item Icon */
-.service-item .icon {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: float 3s ease-in-out infinite;
-  transition: all 0.3s ease;
+/* Service Item Image */
+.service-item .service-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
 }
 
-.service-item .icon i {
-  font-size: 32px;
-  color: var(--primary-color);
-  transition: all 0.3s ease;
+.service-item .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
 }
 
-/* Enhanced Service Item Icon */
+.service-item:hover .service-image img {
+    transform: scale(1.05);
+}
+
+/* Remove the old icon styles */
 .service-item .service-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.service-item .service-icon i {
-  font-size: 36px;
-  color: #ffffff;
-  transition: all 0.4s ease;
-  z-index: 1;
-}
-
-.service-item .service-icon::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: var(--primary-gradient);
-  opacity: 0.8;
-  transition: all 0.4s ease;
-}
-
-.service-item .service-icon::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background: var(--primary-gradient);
-  opacity: 0.3;
-  z-index: -1;
-  transition: all 0.4s ease;
-}
-
-/* Service Item Hover Effects */
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.4);
-}
-
-.service-item:hover .icon {
-  background: var(--primary-color);
-}
-
-.service-item:hover .icon i {
-  color: #ffffff;
-}
-
-.service-item:hover .service-icon {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-item:hover .service-icon::after {
-  transform: scale(1.2);
-  opacity: 0;
-}
-
-.service-item:hover .service-icon i {
-  transform: scale(1.1);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    display: none;
 }
 
 /* About Section Text Styling */
@@ -608,6 +652,10 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.services.section {
+  background: #669999;
+}
+
 .services .section-title h2 {
   color: var(--primary-color);
   text-shadow: none;
@@ -622,6 +670,12 @@
   color: var(--primary-color);
   text-shadow: none;
   font-weight: 500;
+}
+
+.services .section-title h2,
+.services .section-title p {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .services .service-item {
