@@ -704,6 +704,28 @@
     font-size: 20px;
   }
 
+  /* Resources Cards */
+  #resources .resource-card {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  #resources .resource-card h4,
+  #resources .resource-card p {
+    color: #ffffff !important;
+  }
+
+  #resources .resource-card .icon {
+    color: #0080ff;
+    background: none;
+    -webkit-text-fill-color: #0080ff;
+  }
+
+  #resources .resource-card .coming-soon-banner {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+
   /* Contact Section */
   .contact-card {
     margin-bottom: 20px;
