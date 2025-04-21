@@ -203,6 +203,33 @@
   transform: scale(1.1);
 }
 
+/* Enhanced Info Items */
+.info-item {
+  padding: 25px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(31, 38, 135, 0.25);
+}
+
+.info-item i {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.info-item:hover i {
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   #contact {
     background: #3366cc !important;
@@ -212,8 +239,18 @@
   .contact .contact-card,
   .contact-card,
   .info-item {
-    background: #00ffff !important;
+    background: #6666ff !important;
     padding: 25px 20px;
+  }
+
+  #contact .contact-card h3,
+  #contact .contact-card p,
+  #contact .info-item h3,
+  #contact .info-item p,
+  #contact .info-item i,
+  .contact-card .bi,
+  .contact-card a:not(.btn) {
+    color: #ffffff !important;
   }
 
   .contact-card h3 {
@@ -250,6 +287,12 @@
   .qr-code img {
     max-width: 180px;
     padding: 12px;
+  }
+
+  #contact .info-item i {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: inline-block;
   }
 }
 
@@ -310,31 +353,6 @@
 .qr-code img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(43, 76, 126, 0.2);
-}
-
-/* Enhanced Info Items */
-.info-item {
-  padding: 25px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
-  border-radius: 15px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.info-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(31, 38, 135, 0.25);
-}
-
-.info-item i {
-  font-size: 32px;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.info-item:hover i {
-  transform: scale(1.1);
 }
 
 /* Testimonials Section */
