@@ -756,6 +756,19 @@
     background-size: cover !important;
   }
 
+  #testimonials.section[style*="background"]::before {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    opacity: 1;
+  }
+
+  #testimonials .info h3,
+  #testimonials .section-title h2,
+  #testimonials .section-title p {
+    color: #ffffff !important;
+    position: relative;
+    z-index: 3;
+  }
+
   #resources.section[style*="background"] {
     background-position: center !important;
     background-size: cover !important;
