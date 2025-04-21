@@ -769,6 +769,22 @@
     z-index: 3;
   }
 
+  #testimonials .testimonial-item {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  #testimonials .testimonial-item h3,
+  #testimonials .testimonial-item h4,
+  #testimonials .testimonial-item p {
+    color: #ffffff !important;
+  }
+
+  #testimonials .testimonial-item .quote-icon-left,
+  #testimonials .testimonial-item .quote-icon-right {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
   #resources.section[style*="background"] {
     background-position: center !important;
     background-size: cover !important;
