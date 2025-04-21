@@ -204,6 +204,10 @@
 }
 
 @media (max-width: 768px) {
+  #contact {
+    background: #3366cc !important;
+  }
+
   #contact .contact-card,
   .contact .contact-card,
   .contact-card,
