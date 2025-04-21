@@ -360,62 +360,10 @@
 }
 
 /* Testimonials Section */
-.testimonial-header {
-  padding: 20px;
-  background: rgba(43, 76, 126, 0.15);
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.testimonial-header h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2b4c7e;
-  margin-bottom: 5px;
-}
-
-.testimonial-header h4 {
-  font-size: 14px;
-  color: #6c757d;
-  margin-bottom: 10px;
-}
-
-.testimonial-item {
-  background: rgba(255, 255, 255, 0.97);
-  color: #2b2b2b;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-}
-
-.testimonial-item h3 {
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-.testimonial-item h4 {
-  color: #666666;
-}
-
-.testimonial-item p {
-  font-style: italic;
-}
-
-.testimonial-item .stars i {
-  color: #ffd700;
-}
-
-.testimonial-item .bi-quote {
-  color: var(--primary-color);
-  opacity: 0.3;
-}
-
-/* Testimonials Section with Background */
 .testimonials {
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  background-color: #009900;
 }
 
 .testimonials .section-title h2,
@@ -424,17 +372,33 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.testimonials .swiper {
+  background-color: #b3ffb3;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .testimonials .testimonial-item {
-  background: rgba(255, 255, 255, 0.97);
+  background: #006600;
   backdrop-filter: blur(15px);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonials .testimonial-item h3,
+.testimonials .testimonial-item h4,
+.testimonials .testimonial-item p,
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: #ffffff;
 }
 
 .testimonials .info h3 {
   color: #ffffff;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 /* Service Items - Base Styling */
