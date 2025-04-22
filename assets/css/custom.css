@@ -182,14 +182,14 @@ body #contact .contact-card,
 .contact .contact-card,
 #contact .contact-card,
 .contact-card {
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
+  background-color: #2453A3 !important;
+  background: #2453A3 !important;
   backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   border-radius: 8px;
   transition: all 0.3s ease;
-  color: #ffffff;
+  color: #f0f0f0;
 }
 
 body .contact .info-item,
@@ -198,12 +198,73 @@ body #contact .info-item,
 #contact .info-item,
 .info-item {
   padding: 25px;
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
+  background-color: #2453A3 !important;
+  background: #2453A3 !important;
   border-radius: 15px;
   margin-bottom: 20px;
   transition: all 0.3s ease;
   text-align: center;
+}
+
+.contact .info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  background-color: #2453A3 !important;
+  background: #2453A3 !important;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.contact .info-item i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+  margin: 0 auto 15px;
+  font-size: 20px;
+}
+
+.contact .info-item h3,
+.contact .info-item p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.info-item i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #f0f0f0;
+  line-height: 1.5;
+}
+
+.info-item i,
+.info-item h3,
+.info-item p {
+  color: #f0f0f0;
 }
 
 /* Improve card readability on dark backgrounds - excluding contact cards and info items */
@@ -226,11 +287,33 @@ body #contact .info-item,
 body .contact .contact-card,
 body .contact .info-item,
 .contact .contact-card,
-.contact .info-item,
-[class*="section"] .contact-card,
-[class*="section"] .info-item {
-  background: #00cc66 !important;
-  background-color: #00cc66 !important;
+.contact .info-item {
+  background: #2453A3 !important;
+  background-color: #2453A3 !important;
+  color: #ffffff !important;
+}
+
+/* Strong text color enforcement for all text elements */
+.contact-card h3,
+.contact-card p,
+.contact-card span,
+.contact-card i,
+.contact-card a:not(.btn),
+.info-item h3,
+.info-item p,
+.info-item span,
+.info-item i,
+.info-item a:not(.btn),
+#contact .contact-card h3,
+#contact .contact-card p,
+#contact .contact-card span,
+#contact .contact-card i,
+#contact .info-item h3,
+#contact .info-item p,
+#contact .info-item span,
+#contact .info-item i,
+body #contact .contact-card *:not(.btn),
+body #contact .info-item *:not(.btn) {
   color: #ffffff !important;
 }
 
@@ -250,111 +333,8 @@ body .contact .info-item,
   .contact .info-item,
   #contact .info-item,
   .info-item {
-    background-color: #00cc66 !important;
-    background: #00cc66 !important;
-  }
-}
-
-.contact-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.contact-card p {
-  font-size: 1rem;
-  color: #ffffff;
-  line-height: 1.5;
-}
-
-.contact-card i.bi {
-  transition: transform 0.3s ease;
-}
-
-.contact-card:hover i.bi {
-  transform: scale(1.1);
-}
-
-/* Enhanced Info Items */
-.info-item,
-#contact .info-item {
-  padding: 25px;
-  background: #00cc66 !important;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.info-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(31, 38, 135, 0.25);
-}
-
-.info-item i {
-  font-size: 32px;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.info-item:hover i {
-  transform: scale(1.1);
-}
-
-.info-item i,
-.info-item h3,
-.info-item p {
-  color: #ffffff;
-}
-
-.contact .info-item,
-.contact-section .info-item,
-#contact .info-item,
-body .contact .info-item,
-body #contact .info-item {
-  padding: 25px;
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.contact .contact-card,
-.contact-section .contact-card,
-#contact .contact-card,
-body .contact .contact-card,
-body #contact .contact-card {
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  color: #ffffff;
-}
-
-@media (max-width: 768px) {
-  #contact {
-    background: rgba(51, 102, 204, 0.1) !important;
-  }
-
-  #contact .contact-card,
-  .contact .contact-card,
-  .contact-card,
-  .info-item,
-  body #contact .contact-card,
-  body .contact .contact-card,
-  body #contact .info-item,
-  body .contact .info-item {
-    background: #00cc66 !important;
-    background-color: #00cc66 !important;
-    padding: 25px 20px;
+    background-color: #2453A3 !important;
+    background: #2453A3 !important;
   }
 
   #contact .contact-card h3,
@@ -364,7 +344,7 @@ body #contact .contact-card {
   #contact .info-item i,
   .contact-card .bi,
   .contact-card a:not(.btn) {
-    color: #ffffff !important;
+    color: #f0f0f0 !important;
   }
 
   .contact-card h3 {
@@ -446,7 +426,7 @@ body #contact .contact-card {
   body #contact .info-item,
   body .contact .contact-card,
   body .contact .info-item {
-    background: #00cc66 !important;
+    background: #2453A3 !important;
     padding: 25px 20px;
   }
 }
