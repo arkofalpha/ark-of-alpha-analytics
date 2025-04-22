@@ -54,6 +54,18 @@
 }
 
 /* Resources Section */
+.resources {
+  color: #fff;
+  background-color: #1a237e; /* Deep blue background */
+  text-shadow: none;
+}
+
+.resources .section-title h2,
+.resources .section-title p {
+  color: #ffffff; /* White text for better contrast on deep blue */
+  text-shadow: none;
+}
+
 .resource-card {
   padding: 35px;
   background: #333399 !important;
@@ -170,14 +182,14 @@ body #contact .contact-card,
 .contact .contact-card,
 #contact .contact-card,
 .contact-card {
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
+  background-color: #2453A3 !important;
+  background: #2453A3 !important;
   backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   border-radius: 8px;
   transition: all 0.3s ease;
-  color: #ffffff;
+  color: #f0f0f0;
 }
 
 body .contact .info-item,
@@ -186,12 +198,73 @@ body #contact .info-item,
 #contact .info-item,
 .info-item {
   padding: 25px;
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
+  background-color: #2453A3 !important;
+  background: #2453A3 !important;
   border-radius: 15px;
   margin-bottom: 20px;
   transition: all 0.3s ease;
   text-align: center;
+}
+
+.contact .info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  background-color: #2453A3 !important;
+  background: #2453A3 !important;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.contact .info-item i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+  margin: 0 auto 15px;
+  font-size: 20px;
+}
+
+.contact .info-item h3,
+.contact .info-item p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.info-item i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #f0f0f0;
+  line-height: 1.5;
+}
+
+.info-item i,
+.info-item h3,
+.info-item p {
+  color: #f0f0f0;
 }
 
 /* Improve card readability on dark backgrounds - excluding contact cards and info items */
@@ -214,11 +287,33 @@ body #contact .info-item,
 body .contact .contact-card,
 body .contact .info-item,
 .contact .contact-card,
-.contact .info-item,
-[class*="section"] .contact-card,
-[class*="section"] .info-item {
-  background: #00cc66 !important;
-  background-color: #00cc66 !important;
+.contact .info-item {
+  background: #2453A3 !important;
+  background-color: #2453A3 !important;
+  color: #ffffff !important;
+}
+
+/* Strong text color enforcement for all text elements */
+.contact-card h3,
+.contact-card p,
+.contact-card span,
+.contact-card i,
+.contact-card a:not(.btn),
+.info-item h3,
+.info-item p,
+.info-item span,
+.info-item i,
+.info-item a:not(.btn),
+#contact .contact-card h3,
+#contact .contact-card p,
+#contact .contact-card span,
+#contact .contact-card i,
+#contact .info-item h3,
+#contact .info-item p,
+#contact .info-item span,
+#contact .info-item i,
+body #contact .contact-card *:not(.btn),
+body #contact .info-item *:not(.btn) {
   color: #ffffff !important;
 }
 
@@ -238,111 +333,8 @@ body .contact .info-item,
   .contact .info-item,
   #contact .info-item,
   .info-item {
-    background-color: #00cc66 !important;
-    background: #00cc66 !important;
-  }
-}
-
-.contact-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.contact-card p {
-  font-size: 1rem;
-  color: #ffffff;
-  line-height: 1.5;
-}
-
-.contact-card i.bi {
-  transition: transform 0.3s ease;
-}
-
-.contact-card:hover i.bi {
-  transform: scale(1.1);
-}
-
-/* Enhanced Info Items */
-.info-item,
-#contact .info-item {
-  padding: 25px;
-  background: #00cc66 !important;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.info-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(31, 38, 135, 0.25);
-}
-
-.info-item i {
-  font-size: 32px;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.info-item:hover i {
-  transform: scale(1.1);
-}
-
-.info-item i,
-.info-item h3,
-.info-item p {
-  color: #ffffff;
-}
-
-.contact .info-item,
-.contact-section .info-item,
-#contact .info-item,
-body .contact .info-item,
-body #contact .info-item {
-  padding: 25px;
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.contact .contact-card,
-.contact-section .contact-card,
-#contact .contact-card,
-body .contact .contact-card,
-body #contact .contact-card {
-  background-color: #00cc66 !important;
-  background: #00cc66 !important;
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  color: #ffffff;
-}
-
-@media (max-width: 768px) {
-  #contact {
-    background: rgba(51, 102, 204, 0.1) !important;
-  }
-
-  #contact .contact-card,
-  .contact .contact-card,
-  .contact-card,
-  .info-item,
-  body #contact .contact-card,
-  body .contact .contact-card,
-  body #contact .info-item,
-  body .contact .info-item {
-    background: #00cc66 !important;
-    background-color: #00cc66 !important;
-    padding: 25px 20px;
+    background-color: #2453A3 !important;
+    background: #2453A3 !important;
   }
 
   #contact .contact-card h3,
@@ -352,7 +344,7 @@ body #contact .contact-card {
   #contact .info-item i,
   .contact-card .bi,
   .contact-card a:not(.btn) {
-    color: #ffffff !important;
+    color: #f0f0f0 !important;
   }
 
   .contact-card h3 {
@@ -434,7 +426,7 @@ body #contact .contact-card {
   body #contact .info-item,
   body .contact .contact-card,
   body .contact .info-item {
-    background: #00cc66 !important;
+    background: #2453A3 !important;
     padding: 25px 20px;
   }
 }
@@ -518,7 +510,7 @@ body #contact .contact-card {
 }
 
 .testimonials .testimonial-item {
-  background: #006600;
+  background: #006600 !important;
   backdrop-filter: blur(15px);
   color: #ffffff;
   padding: 25px;
@@ -538,6 +530,13 @@ body #contact .contact-card {
 .testimonials .info h3 {
   color: #ffffff;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  #testimonials .testimonial-item {
+    background: #006600 !important;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 /* Service Items - Base Styling */
@@ -1228,4 +1227,185 @@ img {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #1a365d !important;
+    color: #ffffff;
+    padding: 60px 0 30px;
+}
+
+.footer h4 {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.footer p, 
+.footer li {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 2px 0;
+}
+
+.footer a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.footer .footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer .footer-links ul li a {
+    display: inline-block;
+    position: relative;
+}
+
+.footer .footer-links ul li a::before {
+    content: "→";
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer .footer-links ul li a:hover::before {
+    opacity: 1;
+    left: -20px;
+}
+
+/* Enhanced section headings */
+.footer .section-heading {
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.footer .section-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 40px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.footer .social-links {
+    margin-top: 1.5rem;
+}
+
+.footer .social-links a {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer .social-links a i {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 0;
+}
+
+.footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer .copyright p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Footer link visibility enhancements */
+.footer .footer-links ul a,
+.footer .services ul a,
+.footer .solutions ul a {
+    color: #ffffff !important;
+    display: inline-block;
+    line-height: 1;
+    opacity: 0.9;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer .footer-links ul a:hover,
+.footer .services ul a:hover,
+.footer .solutions ul a:hover {
+    color: #ffffff !important;
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure headings are visible */
+.footer h4 {
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Make list items visible */
+.footer ul li {
+    color: #ffffff !important;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* Improve footer readability on mobile */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .footer p, 
+    .footer li {
+        font-size: 0.9rem;
+    }
+
+    .footer .social-links a {
+        width: 32px;
+        height: 32px;
+    }
 }

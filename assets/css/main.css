@@ -555,9 +555,9 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+  color: #ffffff;
+  background-color: #1a365d;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   font-size: 14px;
   position: relative;
 }
@@ -582,6 +582,11 @@ h6 {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+.footer .footer-about .logo .sitename {
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 .footer .footer-about p {
@@ -642,13 +647,14 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: #ffffff !important;
   display: inline-block;
   line-height: 1;
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: #ffffff !important;
+  transform: translateX(5px);
 }
 
 .footer .footer-contact p {
@@ -663,6 +669,11 @@ h6 {
 
 .footer .copyright p {
   margin-bottom: 0;
+}
+
+.footer .copyright .sitename {
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 .footer .credits {
