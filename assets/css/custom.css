@@ -54,6 +54,18 @@
 }
 
 /* Resources Section */
+.resources {
+  color: #fff;
+  background-color: #1a237e; /* Deep blue background */
+  text-shadow: none;
+}
+
+.resources .section-title h2,
+.resources .section-title p {
+  color: #ffffff; /* White text for better contrast on deep blue */
+  text-shadow: none;
+}
+
 .resource-card {
   padding: 35px;
   background: #333399 !important;
