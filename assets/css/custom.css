@@ -518,7 +518,7 @@ body #contact .contact-card {
 }
 
 .testimonials .testimonial-item {
-  background: #006600;
+  background: #006600 !important;
   backdrop-filter: blur(15px);
   color: #ffffff;
   padding: 25px;
@@ -538,6 +538,13 @@ body #contact .contact-card {
 .testimonials .info h3 {
   color: #ffffff;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  #testimonials .testimonial-item {
+    background: #006600 !important;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 /* Service Items - Base Styling */
