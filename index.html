@@ -54,17 +54,17 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#industries">Industries</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#testimonials">Success Stories</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a data-section="hero" class="active">Home</a></li>
+            <li><a data-section="about">About Us</a></li>
+            <li><a data-section="industries">Industries</a></li>
+            <li><a data-section="services">Services</a></li>
+            <li><a data-section="resources">Resources</a></li>
+            <li><a data-section="testimonials">Success Stories</a></li>
+            <li><a data-section="contact">Contact</a></li>
           </ul>
         </nav>
 
-        <a class="cta-btn d-none d-sm-block" href="#contact">Get Started</a>
+        <a class="cta-btn d-none d-sm-block" data-section="contact">Get Started</a>
       </div>
     </div>
   </header>
@@ -82,8 +82,8 @@
           <h2>Transform Your Data Into Business Success</h2>
           <p>Unlock actionable insights with our advanced analytics solutions</p>
           <div class="cta-buttons mt-4">
-            <a href="#contact" class="btn-get-started">Request Demo</a>
-            <a href="#services" class="btn-learn-more">Explore Solutions</a>
+            <a data-section="contact" class="btn-get-started">Request Demo</a>
+            <a data-section="services" class="btn-learn-more">Explore Solutions</a>
           </div>
         </div><!-- End Welcome -->
 
@@ -96,7 +96,7 @@
                 combined with industry knowledge, helps businesses make informed decisions and achieve sustainable growth.
               </p>
               <div class="text-center">
-                <a href="#about" class="more-btn"><span>Discover More</span> <i class="bi bi-chevron-right"></i></a>
+                <a data-section="about" class="more-btn"><span>Discover More</span> <i class="bi bi-chevron-right"></i></a>
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -376,7 +376,7 @@
         <div class="row gy-4 gx-md-4">
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative py-3">
-              <a href="#contact" class="text-decoration-none text-dark">
+              <a data-section="contact" class="text-decoration-none text-dark">
                 <div class="service-image">
                   <img src="assets/img/ark-bg.jpg" alt="Data Visualization">
                 </div>
@@ -394,7 +394,7 @@
 
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative py-3">
-              <a href="#contact" class="text-decoration-none text-dark">
+              <a data-section="contact" class="text-decoration-none text-dark">
                 <div class="service-image">
                   <img src="assets/img/line-chart.jpg" alt="Predictive Analytics">
                 </div>
@@ -412,7 +412,7 @@
 
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative py-3">
-              <a href="#contact" class="text-decoration-none text-dark">
+              <a data-section="contact" class="text-decoration-none text-dark">
                 <div class="service-image">
                   <img src="assets/img/good-data.jpg" alt="Data Management">
                 </div>
@@ -430,7 +430,7 @@
 
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative py-3">
-              <a href="#contact" class="text-decoration-none text-dark">
+              <a data-section="contact" class="text-decoration-none text-dark">
                 <div class="service-image">
                   <img src="assets/img/intelligence.jpg" alt="Business Intelligence">
                 </div>
@@ -448,7 +448,7 @@
 
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative py-3">
-              <a href="#contact" class="text-decoration-none text-dark">
+              <a data-section="contact" class="text-decoration-none text-dark">
                 <div class="service-image">
                   <img src="assets/img/data-centre.jpg" alt="Cloud Analytics">
                 </div>
@@ -466,7 +466,7 @@
 
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative py-3">
-              <a href="#contact" class="text-decoration-none text-dark">
+              <a data-section="contact" class="text-decoration-none text-dark">
                 <div class="service-image">
                   <img src="assets/img/training.jpg" alt="Analytics Training">
                 </div>
@@ -760,9 +760,9 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a data-section="hero">Home</a></li>
+            <li><a data-section="about">About us</a></li>
+            <li><a data-section="services">Services</a></li>
             <li><a href="terms.html">Terms of service</a></li>
             <li><a href="privacy.html">Privacy policy</a></li>
           </ul>
@@ -771,22 +771,22 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Data Visualization</a></li>
-            <li><a href="#">Predictive Analytics</a></li>
-            <li><a href="#">Data Management</a></li>
-            <li><a href="#">Business Intelligence</a></li>
-            <li><a href="#">Analytics Training</a></li>
+            <li><a data-section="services">Data Visualization</a></li>
+            <li><a data-section="services">Predictive Analytics</a></li>
+            <li><a data-section="services">Data Management</a></li>
+            <li><a data-section="services">Business Intelligence</a></li>
+            <li><a data-section="services">Analytics Training</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Solutions</h4>
           <ul>
-            <li><a href="#">Enterprise Analytics</a></li>
-            <li><a href="#">Cloud Integration</a></li>
-            <li><a href="#">Custom Dashboards</a></li>
-            <li><a href="#">Real-time Analytics</a></li>
-            <li><a href="#">Data Strategy</a></li>
+            <li><a data-section="services">Enterprise Analytics</a></li>
+            <li><a data-section="services">Cloud Integration</a></li>
+            <li><a data-section="services">Custom Dashboards</a></li>
+            <li><a data-section="services">Real-time Analytics</a></li>
+            <li><a data-section="services">Data Strategy</a></li>
           </ul>
         </div>
 
@@ -807,7 +807,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a data-section="hero" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
