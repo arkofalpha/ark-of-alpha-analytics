@@ -81,12 +81,13 @@
   });
 
   /**
-   * Smooth scroll to sections and close mobile nav
+   * Smooth scroll to sections and handle mobile nav
    */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll('[data-section]').forEach(link => {
+    link.addEventListener('click', function(e) {
       e.preventDefault();
-      
+
+      // Close mobile nav if open
       if (navmenu?.classList.contains('mobile-nav-active')) {
         navmenu.classList.remove('mobile-nav-active');
         mobileNavToggle.classList.add('bi-list');
@@ -94,19 +95,48 @@
         document.body.classList.remove('mobile-nav-open');
       }
 
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
+      const targetId = this.getAttribute('data-section');
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
         const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
-        const elementPosition = target.getBoundingClientRect().top;
+        const elementPosition = targetSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
+
+        // Update active state
+        document.querySelectorAll('[data-section]').forEach(el => el.classList.remove('active'));
+        this.classList.add('active');
       }
     });
   });
+
+  /**
+   * Navmenu scrollspy
+   */
+  function navmenuScrollspy() {
+    const sections = document.querySelectorAll('section[id]');
+    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+    const scrollPosition = window.scrollY + headerHeight + 100;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        document.querySelectorAll('[data-section]').forEach(link => link.classList.remove('active'));
+        document.querySelector(`[data-section="${sectionId}"]`)?.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', navmenuScrollspy);
+  window.addEventListener('load', navmenuScrollspy);
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -238,25 +268,24 @@
   });
 
   /**
-   * Navmenu Scrollspy
+   * Add Read More functionality to testimonials on mobile
    */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
+  document.addEventListener('DOMContentLoaded', function() {
+    const testimonialSpans = document.querySelectorAll('.testimonial-item span');
+    testimonialSpans.forEach(span => {
+      // Only add the button if the content is truncated
+      if (span.scrollHeight > span.clientHeight) {
+        const readMoreBtn = document.createElement('button');
+        readMoreBtn.className = 'read-more-btn';
+        readMoreBtn.textContent = 'Read More';
+        span.parentNode.insertBefore(readMoreBtn, span.nextSibling);
 
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
+        readMoreBtn.addEventListener('click', () => {
+          span.classList.toggle('expanded');
+          readMoreBtn.textContent = span.classList.contains('expanded') ? 'Show Less' : 'Read More';
+        });
       }
-    })
-  }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
+    });
+  });
 
 })();
