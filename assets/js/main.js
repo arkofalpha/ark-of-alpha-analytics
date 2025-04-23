@@ -259,4 +259,25 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Add Read More functionality to testimonials on mobile
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    const testimonialSpans = document.querySelectorAll('.testimonial-item span');
+    testimonialSpans.forEach(span => {
+      // Only add the button if the content is truncated
+      if (span.scrollHeight > span.clientHeight) {
+        const readMoreBtn = document.createElement('button');
+        readMoreBtn.className = 'read-more-btn';
+        readMoreBtn.textContent = 'Read More';
+        span.parentNode.insertBefore(readMoreBtn, span.nextSibling);
+
+        readMoreBtn.addEventListener('click', () => {
+          span.classList.toggle('expanded');
+          readMoreBtn.textContent = span.classList.contains('expanded') ? 'Show Less' : 'Read More';
+        });
+      }
+    });
+  });
+
 })();
