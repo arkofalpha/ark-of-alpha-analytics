@@ -1,5 +1,5 @@
 // Import products array
-const products = require('../../data/products.js');
+const products = require('./data/products.js');
 
 // Initialize catalog when DOM is loaded
 document.addEventListener('DOMContentLoaded', initCatalog);
