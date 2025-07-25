@@ -4,7 +4,7 @@ export const products = [    {
       title: 'Analytics Dashboard',
       desc: 'Interactive dashboards for key metrics',
       image: 'dashboard.png',
-      price: 13712
+      price: 15712
     },
     {
       id: 'report',      title: 'Custom Reporting Service',
